@@ -1,7 +1,34 @@
+.movie-card-container {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 24%;
+  margin-bottom: 20px;
+}
+
+.movie-card-image {
+  height: 270px;
+  width: 220px;
+  border-radius: 5px;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+}
+
 .poster-size {
   width: 200px;
   object-fit: cover;
   border-radius: 20px;
+}
+
+.rating-styling {
+  color: darkgoldenrod;
+  font-weight: bold;
+  align-self: center;
 }
 
 .movie {
@@ -14,13 +41,16 @@
   padding: 20px;
   border-radius: 10px;
 }
-.movie:hover {
-  box-shadow: 3px 0px 15px 6px rgba(179, 177, 177, 0.1);
+
+.movie-title {
+  color: olive;
+  font-weight: bold;
+  margin-bottom: 2px;
 }
-@media screen and (max-width: 1200px) {
-  .movie {
-    flex-grow: 1;
-  }
+
+.link-styling {
+  text-decoration: none;
+  color: inherit;
 }
 
 .view-details {
@@ -29,9 +59,10 @@
   align-self: stretch;
   background-color: #8b1c15;
   border: none;
-  height: 30px;
+  height: 35px;
   color: #fff;
   border-radius: 10px;
+  font-weight: bold;
 }
 @media screen and (max-width: 425px) {
   .view-details {

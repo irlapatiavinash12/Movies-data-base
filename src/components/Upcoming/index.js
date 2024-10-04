@@ -1,13 +1,13 @@
-import React from 'react'
+import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 
 import MovieCard from '../MovieCard'
 import Navbar from '../Navbar'
-import Pagination from '../Pagination/index.js'
+import Pagination from '../Pagination'
 
 import './index.css'
 
-class Upcoming extends React.Component {
+class Upcoming extends Component {
   state = {
     isLoading: true,
     upcomingMovieResponse: {},
@@ -48,7 +48,7 @@ class Upcoming extends React.Component {
     const {results} = upcomingMovieResponse
 
     return (
-      <ul className="row p-0 ms-0 me-0 mt-3">
+      <ul className="upcoming-movies-list-container">
         {results.map(movie => (
           <MovieCard key={movie.id} movieDetails={movie} />
         ))}
@@ -63,6 +63,7 @@ class Upcoming extends React.Component {
       <>
         <Navbar />
         <div className="route-page-body">
+          <h1>Upcoming</h1>
           {isLoading
             ? this.renderLoadingView()
             : this.renderPopularMoviesList()}

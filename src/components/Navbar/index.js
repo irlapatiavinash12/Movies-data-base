@@ -8,8 +8,11 @@ const Navbar = props => {
   const renderSearchBar = () => (
     <SearchMoviesContext.Consumer>
       {value => {
-        const {onTriggerSearchingQuery, onChangeSearchInput, searchInput} =
-          value
+        const {
+          onTriggerSearchingQuery,
+          onChangeSearchInput,
+          searchInput,
+        } = value
 
         const onChangeHandler = event => onChangeSearchInput(event.target.value)
 
@@ -21,16 +24,16 @@ const Navbar = props => {
         }
 
         return (
-          <div className="d-flex align-items-center">
+          <div className="header-bottom-section">
             <input
               type="text"
-              className="me-2 search-input"
+              className="search-input"
               onChange={onChangeHandler}
               value={searchInput}
               placeholder="Search"
             />
             <button
-              className="btn btn-outline-info"
+              className="search-button"
               type="button"
               onClick={onSearchHandler}
             >
@@ -43,28 +46,22 @@ const Navbar = props => {
   )
 
   return (
-    <nav className="navbar-container d-flex align-items-center p-3">
-      <div className="logo-container">
+    <nav className="navbar-container">
+      <div className="header-top-section">
         <h1 className="page-logo">movieDB</h1>
+        <ul className="nav-unordered-list">
+          <Link className="link-styling" to="/">
+            <li className="nav-item">Popular</li>
+          </Link>
+          <Link className="link-styling" to="/top-rated">
+            <li className="nav-item">Top Rated</li>
+          </Link>
+          <Link className="link-styling" to="/upcoming">
+            <li className="nav-item">Upcoming</li>
+          </Link>
+        </ul>
       </div>
       <div className="ms-auto d-flex align-items-center">
-        <ul className="order-1 d-flex align-items-center p-0 mb-0 ms-3 nav-items-list">
-          <li className="nav-item">
-            <Link className="nav-link" to="/">
-              Popular
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/top-rated">
-              Top Rated
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/upcoming">
-              Upcoming
-            </Link>
-          </li>
-        </ul>
         {renderSearchBar()}
       </div>
     </nav>

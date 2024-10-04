@@ -3,7 +3,7 @@ import Loader from 'react-loader-spinner'
 
 import MovieCard from '../MovieCard'
 import Navbar from '../Navbar'
-import Pagination from '../Pagination/index.js'
+import Pagination from '../Pagination'
 
 import './index.css'
 
@@ -48,7 +48,7 @@ class TopRated extends React.Component {
     const {results} = topRatedMovieResponse
 
     return (
-      <ul className="row p-0 ms-0 me-0 mt-3">
+      <ul className="top-rated-unordered">
         {results.map(movie => (
           <MovieCard key={movie.id} movieDetails={movie} />
         ))}
@@ -64,6 +64,7 @@ class TopRated extends React.Component {
         {' '}
         <Navbar />
         <div className="route-page-body">
+          <h1>Top-Rated</h1>
           {isLoading
             ? this.renderLoadingView()
             : this.renderPopularMoviesList()}

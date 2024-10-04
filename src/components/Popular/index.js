@@ -48,7 +48,7 @@ class Popular extends React.Component {
     const {results} = popularMovieResponse
 
     return (
-      <ul className="row p-0 ms-0 me-0 mt-3">
+      <ul className="popular-movie-cards">
         {results.map(movie => (
           <MovieCard key={movie.id} movieDetails={movie} />
         ))}
@@ -63,6 +63,7 @@ class Popular extends React.Component {
       <>
         <Navbar />
         <div className="route-page-body">
+          <h1>Popular</h1>
           {isLoading
             ? this.renderLoadingView()
             : this.renderPopularMoviesList()}

@@ -5,3 +5,12 @@
   justify-content: center;
   align-items: center;
 }
+
+.popular-movie-cards {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}

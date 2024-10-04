@@ -8,6 +8,8 @@ import SearchQuery from './components/SearchQuery'
 
 import SearchMoviesContext from './context/SearchMoviesContext'
 
+import MovieDetails from './components/MovieDetails'
+
 import './App.css'
 
 const API_KEY = 'f32b79895b21468afbdd6d5342cbf3da'
@@ -51,12 +53,13 @@ const App = () => {
         onChangeSearchInput,
       }}
     >
-      <div className="App d-flex flex-column">
+      <div className="App">
         <Switch>
           <Route exact path="/" component={Popular} />
           <Route exact path="/top-rated" component={TopRated} />
           <Route exact path="/upcoming" component={Upcoming} />
           <Route exact path="/search" component={SearchQuery} />
+          <Route exact path="/movie/:id" component={MovieDetails} />
         </Switch>
       </div>
     </SearchMoviesContext.Provider>

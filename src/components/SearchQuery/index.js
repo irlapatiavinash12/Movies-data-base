@@ -2,7 +2,7 @@ import Loader from 'react-loader-spinner'
 
 import MovieCard from '../MovieCard'
 import Navbar from '../Navbar'
-import Pagination from '../Pagination/index.js'
+import Pagination from '../Pagination'
 
 import SearchMoviesContext from '../../context/SearchMoviesContext'
 
@@ -10,7 +10,7 @@ import './index.css'
 
 const SearchQuery = () => {
   const renderEmptyView = () => (
-    <div className='empty-view-container'>
+    <div className="empty-view-container">
       <h1>No results found.</h1>
       <p>Don not get worried, Try to search again.</p>
     </div>
@@ -23,7 +23,7 @@ const SearchQuery = () => {
       return renderEmptyView()
     }
     return (
-      <ul className='row p-0 ms-0 me-0 mt-3'>
+      <ul className="row p-0 ms-0 me-0 mt-3">
         {results.map(movie => (
           <MovieCard key={movie.id} movieDetails={movie} />
         ))}
@@ -32,8 +32,8 @@ const SearchQuery = () => {
   }
 
   const renderLoadingView = () => (
-    <div className='loader-container'>
-      <Loader type='ThreeDots' color='#032541' height='50' width='50' />
+    <div className="loader-container">
+      <Loader type="ThreeDots" color="#032541" height="50" width="50" />
     </div>
   )
 
@@ -58,7 +58,7 @@ const SearchQuery = () => {
         return (
           <>
             <Navbar />
-            <div className='route-page-body'>
+            <div className="route-page-body">
               {renderSearchResultViews(value)}
             </div>
             <Pagination
